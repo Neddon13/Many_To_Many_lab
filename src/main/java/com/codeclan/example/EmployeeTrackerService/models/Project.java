@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -40,10 +41,10 @@ public class Project {
     )
     private List<Employee> employees;
 
-    public Project(String name, int duration, List<Employee> employees) {
+    public Project(String name, int duration) {
         this.name = name;
         this.duration = duration;
-        this.employees = employees;
+        this.employees = new ArrayList<>();
     }
 
     public Project() {
